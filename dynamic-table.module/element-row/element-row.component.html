@@ -1,0 +1,9 @@
+<div class="column border-left-none" *ngFor="let item of columns; trackBy: trackByFn;"
+     [style.order]="item.position"
+     [style.flex]="'0 0 ' + (item.flexFactor * baseColSize) + 'px'"
+     [class.is-first]="item.position === 0"
+     [class.hide-full]="!item.view"
+     (click)="columnClick.emit({ column: item, value: content[item.key], content: content })">
+  <p *ngIf="cellIsDefault">{{ content ? (content[item.key] || ' - ') : ' - '}}</p>
+  <template [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{$implicit: { content: content, key: item.key }}"></template>
+</div>

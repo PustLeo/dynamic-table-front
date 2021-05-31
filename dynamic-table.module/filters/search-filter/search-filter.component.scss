@@ -1,0 +1,18 @@
+@import "~@hospital/styles/src/abstracts/main";
+
+:host {
+  float: left;
+  @include sizeValue(100%, null, null, 100%, null, null);
+
+
+  .filter-element {
+    float: left;
+    @include sizeValue(100%, null, null, 100%, null, null);
+  }
+
+  .filter-input-group {
+    height: 40px;
+
+    input { margin-top: 4px }
+  }
+}

@@ -1,0 +1,46 @@
+@import "~@hospital/styles/src/abstracts/main";
+@import '~@hospital/styles/src/modules/table/colums';
+
+:host {
+  max-height: 48px;
+  border: solid map_get($colors, 'type-3');
+  border-width: 1px 0 0 0;
+  z-index: 200;
+  box-sizing: border-box;
+  width: auto!important;
+
+  & > .column {
+    max-height: 38px;
+    border-bottom: 1px solid map_get($colors, 'type-3');
+    cursor: pointer;
+  }
+
+  .sort {
+    @include sizeValue(30px, null, null, 12px, null, null);
+    margin: 6px 0 0 0;
+    float: left;
+    position: relative;
+
+    &.desc {transform: rotate(180deg)}
+
+    &::before {
+      content: '';
+      position: absolute;
+      @include posValue(0, 8px, 0, 0);
+      margin: auto;
+      @include sizeValue(10px, null, null, 2px, null, null);
+      background: opacityColor('type-3', .8);
+      transform: rotate(35deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      @include posValue(0, 0, 0, 8px);
+      margin: auto;
+      @include sizeValue(10px, null, null, 2px, null, null);
+      background: opacityColor('type-3', .8);
+      transform: rotate(-35deg);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<element-row *ngFor="let item of model.list; let indx = index; trackBy: trackByFn;"
+             [columns]="columns" [content]="item"
+             [baseColSize]="model.baseColSize"
+             minTableSize [baseSize]="model.baseColSize"
+             [elemCount]="model.flexSize"
+             [cellIsDefault]="cellIsDefault" [class.is-first]="indx === 0"
+             (click)="rowClick(item)" (columnClick)="columnClick($event)">
+    <ng-template let-item>
+        <template [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{$implicit: item}"></template>
+    </ng-template>
+</element-row>

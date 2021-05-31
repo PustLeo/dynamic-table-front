@@ -1,0 +1,9 @@
+<div class="filters-container">
+  <div class="column border-left-none" *ngFor="let item of columns; trackBy: trackByFn;"
+       [style.order]="item.position"
+       [style.flex]="'0 0 ' + (item.flexFactor * model.baseColSize) + 'px'"
+       [class.is-first]="item.position === 0"
+       [class.hide-full]="!item.view">
+    <filter-entity *ngIf="model.filters.contains(item.key)" [model]="model.filters.get(item.key)"></filter-entity>
+  </div>
+</div>

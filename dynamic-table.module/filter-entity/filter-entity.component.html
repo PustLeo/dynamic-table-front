@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="currentType">
+  <ng-container *ngSwitchCase="'string'" [ngSwitch]="currentSubtype">
+    <date-filter *ngSwitchCase="'date'" [formControlVal]="model"></date-filter>
+    <search-filter *ngSwitchCase="'search'" [formControlVal]="model"></search-filter>
+  </ng-container>
+  <ng-container *ngSwitchCase="'number'" [ngSwitch]="currentSubtype">
+    <integer-filter *ngSwitchCase="'integer'" [formControlVal]="model"></integer-filter>
+  </ng-container>
+</ng-container>

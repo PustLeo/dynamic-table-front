@@ -1,0 +1,12 @@
+<div class="settings-container">
+  <div class="column border-left-none" *ngFor="let item of columns; trackBy: trackByFn;"
+       [style.order]="item.position"
+       [style.flex]="'0 0 ' + (item.flexFactor * model.baseColSize) + 'px'"
+       [class.is-first]="item.position === 0"
+       [ngSwitch]="item.key"
+       [class.hide-full]="!item.view">
+    <div class="arrow left"></div>
+    <div class="eye" [class.off]="!item.view"></div>
+    <div class="arrow right"></div>
+  </div>
+</div>

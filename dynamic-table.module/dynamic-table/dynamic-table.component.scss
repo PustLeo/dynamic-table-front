@@ -1,0 +1,13 @@
+@import "~@hospital/styles/src/abstracts/main";
+
+:host {
+  @include table();
+
+  .table {
+    top: 16px;
+  }
+
+  &.table-top-none .table { top: 0 }
+
+  &.table-top-72 .table { top: 72px }
+}

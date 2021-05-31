@@ -1,0 +1,13 @@
+<ng-container *ngIf="form">
+  <div class="filter-operators">
+    <div class="filter-operators__operator" [class.active]="isGreater"
+         (click)="changeOperator('GREATER')">></div>
+    <div class="filter-operators__operator" [class.active]="isLess"
+         (click)="changeOperator('LESS')"><</div>
+    <div class="filter-operators__operator" [class.active]="isEqual"
+         (click)="changeOperator('EQUALLY')">=</div>
+  </div>
+  <div class="input-group filter-input-group s-small light">
+    <input type="text" placeholder="Число" [(ngModel)]="search" (ngModelChange)="change($event)">
+  </div>
+</ng-container>

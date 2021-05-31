@@ -1,0 +1,31 @@
+@import "~@hospital/styles/src/abstracts/main";
+@import '~@hospital/styles/src/modules/table/colums';
+
+:host {
+  //border-top: 1px solid map_get($colors, 'type-3');
+  float: left;
+  @include sizeValue(100%, null, null, 48px, null, null);
+  position: sticky;
+  top: 48px;
+  display: flex;
+  z-index: 200;
+  width: auto;
+  background: map-get($colors, 'type-1');
+  transform: scale(0);
+
+  &.view {
+    transform: scale(1);
+  }
+
+  .filters-container {
+    float: left;
+    display: flex;
+    @include sizeValue(100%, null, null, 40px, null, null);
+    background: map-get($colors, 'type-1');
+
+    .column {
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+    }
+  }
+}

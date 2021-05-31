@@ -1,0 +1,10 @@
+<div class="column border-left-none" #col *ngFor="let item of columns; trackBy: trackByFn;"
+     [style.order]="item.position"
+     [style.flex]="'0 0 ' + (item.flexFactor * model.baseColSize) + 'px'"
+     [class.is-first]="item.position === 0"
+     [class.hide-full]="!item.view"
+     (click)="item.isSortable ? sorting.next(item.sortKey) : null">
+  <p>{{item.title}}</p>
+  <div class="sort" *ngIf="sort?.sortField === item.sortKey && item.sortKey.length > 0" [ngClass]="sort?.sortDir"></div>
+  <hr (mousedown)="mousedown(col, item)" (click)="$event.stopPropagation()">
+</div>

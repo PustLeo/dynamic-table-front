@@ -1,0 +1,9 @@
+<dynamic-table class="table-top-72" [tableName]="tableName"
+               [items]="model.list | async"
+               (toRequestBody)="loadList($event, true)"
+               (scrollEnded)="loadNextPage()"
+               (rowClick)="rowClick($event)" >
+<!--  <ng-template let-item>-->
+<!--    <p>{{item.content[item.key] || ' - '}}</p>-->
+<!--  </ng-template>-->
+</dynamic-table>

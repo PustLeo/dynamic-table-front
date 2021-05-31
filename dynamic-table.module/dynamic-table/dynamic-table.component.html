@@ -1,0 +1,19 @@
+<div class="table s-small" #table>
+  <div class="table__body" [class.view-fast-settings]="model.viewSettings" (scroll)="eventScroll($event)">
+    <headers-row minTableSize [baseSize]="model.baseColSize"
+                 [elemCount]="model.flexSize" [model]="model"
+                 (sorting)="setSort($event)"
+                 (changeColumn)="saveChangeColumn($event)"></headers-row>
+    <filters-row minTableSize [baseSize]="model.baseColSize"
+                 [elemCount]="model.flexSize" [model]="model"></filters-row>
+    <settings-row minTableSize [baseSize]="model.baseColSize"
+                  [elemCount]="model.flexSize" [model]="model"></settings-row>
+    <elements-container minTableSize [baseSize]="model.baseColSize"
+                        [elemCount]="model.flexSize" [model]="model"
+                        [cellIsDefault]="cellIsDefault">
+      <ng-template let-item>
+        <template [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{$implicit: item}"></template>
+      </ng-template>
+    </elements-container>
+  </div>
+</div>

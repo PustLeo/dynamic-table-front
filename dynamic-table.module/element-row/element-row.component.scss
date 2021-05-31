@@ -1,0 +1,20 @@
+@import "~@hospital/styles/src/abstracts/main";
+@import '~@hospital/styles/src/modules/table/colums';
+
+:host {
+  float: left;
+  @include sizeValue(auto, null, null, auto, 38px, null);
+  border: solid map_get($colors, 'type-3');
+  border-width: 0 0 1px 0;
+  box-sizing: border-box;
+  display: flex;
+  cursor: pointer;
+
+  .column {
+    background: map-get($colors, 'type-1');
+  }
+
+  &.is-first {
+    border-top-width: 1px;
+  }
+}

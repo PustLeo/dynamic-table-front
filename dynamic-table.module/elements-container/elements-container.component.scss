@@ -1,0 +1,12 @@
+@import "~@hospital/styles/src/abstracts/main";
+@import '~@hospital/styles/src/modules/table/colums';
+
+@include table();
+
+:host {
+  border-width: 0!important;
+
+  &.view-filters { top:98px!important }
+
+  &.view-settings { top: 144px!important }
+}

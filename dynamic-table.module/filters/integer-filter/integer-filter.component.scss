@@ -1,0 +1,49 @@
+@import "~@hospital/styles/src/abstracts/main";
+
+:host {
+  float: left;
+  @include sizeValue(100%, null, null, 100%, null, null);
+
+
+  .filter-element {
+    float: left;
+    @include sizeValue(100%, null, null, 100%, null, null);
+  }
+
+  .filter-input-group {
+    height: 40px;
+    width: calc(100% - 35px);
+
+    input { margin-top: 4px }
+  }
+
+  .filter-operators {
+    float: left;
+    @include sizeValue(25px, null, null, 36px, null, null);
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+
+    &__operator {
+      @include sizeValue(16px, null, null, 10px, null, null);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include setFontOptions('condbold', null, 'type-2', 'type-3', 1);
+      cursor: pointer;
+      box-sizing: border-box;
+
+      &:hover {
+        background: opacityColor('type-27', .15);
+        border: 1px solid opacityColor('type-28', .15);
+      }
+
+      &.active {
+        background: opacityColor('type-27', .3);
+        border: 1px solid opacityColor('type-28', .3);
+      }
+
+      + .filter-operators__operator { margin-top: 2px }
+    }
+  }
+}

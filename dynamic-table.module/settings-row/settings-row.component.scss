@@ -1,0 +1,62 @@
+@import "~@hospital/styles/src/abstracts/main";
+@import '~@hospital/styles/src/modules/table/colums';
+
+:host {
+  float: left;
+  @include sizeValue(100%, null, null, 48px, null, null);
+  position: sticky;
+  top: 96px;
+  display: flex;
+  background: map-get($colors, 'type-1');
+  z-index: 200;
+  width: auto;
+  transform: scale(0);
+
+  &.view {
+    transform: scale(1);
+  }
+
+  .settings-container {
+    float: left;
+    display: flex;
+    @include sizeValue(100%, null, null, 40px, null, null);
+    background: map-get($colors, 'type-1');
+
+    .column {
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+    }
+
+    .eye {
+      float: left;
+      margin: 0 4px;
+      @include sizeValue(20px, null, null, 16px, null, null);
+      background: url(getImage('eye-off-dark.svg')) 0 0 no-repeat;
+      background-size: contain;
+      cursor: pointer;
+
+      &.off {
+        background: url(getImage('eye-dark.svg')) 0 0 no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .arrow {
+      float: left;
+      margin: 0 4px;
+      @include sizeValue(20px, null, null, 15px, null, null);
+      cursor: pointer;
+
+      &.left {
+        background: url(getImage('left-arrow-dark.svg')) 0 0 no-repeat;
+        background-size: contain;
+      }
+
+      &.right {
+        background: url(getImage('left-arrow-dark.svg')) 0 0 no-repeat;
+        background-size: contain;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

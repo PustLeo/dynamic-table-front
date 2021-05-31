@@ -1,0 +1,14 @@
+<ng-container *ngIf="form">
+  <div class="filter-operators">
+    <div class="filter-operators__operator" [class.active]="isGreater"
+         (click)="changeOperator('GREATER')">></div>
+    <div class="filter-operators__operator" [class.active]="isLess"
+         (click)="changeOperator('LESS')"><</div>
+    <div class="filter-operators__operator" [class.active]="isEqual"
+         (click)="changeOperator('EQUALLY')">=</div>
+  </div>
+  <div class="input-group filter-input-group s-small light" [formGroup]="form">
+    <date-time-control  mode="date" formControlName="value"></date-time-control>
+  </div>
+
+</ng-container>
